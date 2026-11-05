@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mw777.me-网址导航平台_入口地址与资源聚合</title>
+<meta name="description" content="mw777.me 是一个以网址导航与资源聚合为定位的入口平台，本页整理 mw777.me 的站点定位、栏目构成、访问方式与使用说明，帮助访问者快速了解并找到需要的入口信息。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2a4a'/%3E%3Cpath d='M18 22h28M18 32h20M18 42h28' stroke='%2338bdf8' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='32' r='6' fill='%23f9c74f'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0f2a4a;
+    --ink-soft:#3d5a7a;
+    --cyan:#0b8fd0;
+    --cyan-deep:#066a9c;
+    --amber:#e8a33d;
+    --paper:#f6f9fc;
+    --line:#dbe6f0;
+    --white:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--cyan-deep);text-decoration:none;}
+  a:hover{color:var(--cyan);}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- Header ---------- */
+  header.site{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;min-height:66px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .brand .glyph{width:34px;height:34px;display:block;}
+  .brand .name{
+    font-size:19px;font-weight:800;letter-spacing:.3px;color:var(--ink);
+  }
+  nav.main nav, nav.main{display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    display:inline-block;padding:7px 12px;border-radius:999px;
+    font-size:14.5px;color:var(--ink-soft);font-weight:600;
+    transition:background .18s,color .18s;
+  }
+  nav.main a:hover{background:#e8f3fb;color:var(--cyan-deep);}
+  .nav-toggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:linear-gradient(150deg,#0f2a4a 0%,#123a63 52%,#0b6fa8 100%);
+    color:#eaf3fb;
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background-image:radial-gradient(circle at 84% 18%,rgba(56,189,248,.28),transparent 46%),
+                     radial-gradient(circle at 12% 88%,rgba(232,163,61,.20),transparent 48%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative;z-index:2;padding-top:58px;padding-bottom:54px;}
+  .kicker{
+    display:inline-block;font-size:13px;letter-spacing:2px;font-weight:700;
+    color:#8fd3f7;border:1px solid rgba(143,211,247,.45);
+    padding:4px 12px;border-radius:999px;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(30px,5.2vw,50px);
+    line-height:1.18;font-weight:800;letter-spacing:.5px;
+    color:#ffffff;word-break:break-all;
+  }
+  .hero p.lead{
+    margin-top:18px;max-width:660px;
+    font-size:clamp(15px,1.7vw,17.5px);color:#c7dcee;line-height:1.85;
+  }
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;border-radius:10px;font-weight:700;font-size:15px;
+    transition:transform .16s,box-shadow .16s,background .16s;
+  }
+  .btn-primary{background:var(--amber);color:#2b1c00;box-shadow:0 6px 18px rgba(232,163,61,.32);}
+  .btn-primary:hover{transform:translateY(-2px);color:#2b1c00;box-shadow:0 10px 24px rgba(232,163,61,.42);}
+  .btn-ghost{background:rgba(255,255,255,.10);color:#eaf3fb;border:1px solid rgba(255,255,255,.34);}
+  .btn-ghost:hover{background:rgba(255,255,255,.18);color:#fff;}
+  .hero-facts{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;margin-top:38px;max-width:760px;
+  }
+  .fact{
+    background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+    border-radius:12px;padding:14px 16px;
+  }
+  .fact b{display:block;font-size:17px;color:#fff;font-weight:800;}
+  .fact span{font-size:13px;color:#a9c8e0;}
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0;}
+  section:nth-of-type(even){background:var(--white);}
+  .sec-head{max-width:720px;margin-bottom:30px;}
+  .sec-tag{
+    font-size:13px;font-weight:800;letter-spacing:2px;color:var(--cyan-deep);
+    text-transform:uppercase;
+  }
+  h2{
+    font-size:clamp(22px,3vw,29px);font-weight:800;line-height:1.32;
+    margin-top:8px;color:var(--ink);
+  }
+  .sec-head p{margin-top:12px;color:var(--ink-soft);font-size:15.5px;}
+
+  .grid{display:grid;gap:18px;}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr));}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr));}
+
+  .card{
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;box-shadow:0 1px 2px rgba(15,42,74,.04);
+    transition:transform .18s,box-shadow .18s,border-color .18s;
+  }
+  section:nth-of-type(even) .card{background:var(--paper);}
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,42,74,.09);border-color:#c3d8ea;}
+  .card .ico{
+    width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+    background:#e6f4fc;margin-bottom:14px;
+  }
+  .card .ico svg{width:22px;height:22px;}
+  .card h3{font-size:17px;font-weight:800;margin-bottom:8px;}
+  .card p{font-size:14.8px;color:var(--ink-soft);}
+  .card ul{margin-top:10px;padding-left:18px;font-size:14.6px;color:var(--ink-soft);}
+  .card ul li{margin-bottom:5px;}
+
+  /* ---------- Guide list ---------- */
+  .steps{display:grid;gap:0;border-top:1px solid var(--line);}
+  .step{
+    display:grid;grid-template-columns:64px 1fr;gap:18px;
+    padding:22px 0;border-bottom:1px solid var(--line);
+  }
+  .step .num{
+    font-size:26px;font-weight:800;color:#b9cfe2;line-height:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .step h3{font-size:17px;font-weight:800;margin-bottom:6px;}
+  .step p{font-size:15px;color:var(--ink-soft);}
+
+  /* ---------- Notice / FAQ ---------- */
+  .faq{border-top:1px solid var(--line);}
+  details{
+    border-bottom:1px solid var(--line);padding:16px 0;
+  }
+  details summary{
+    cursor:pointer;font-weight:700;font-size:16px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{
+    content:"+";font-size:20px;font-weight:700;color:var(--cyan-deep);flex-shrink:0;
+  }
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px;font-size:15px;color:var(--ink-soft);}
+
+  .note{
+    background:#fff8ea;border:1px solid #f2d9a6;border-left:4px solid var(--amber);
+    border-radius:10px;padding:16px 20px;font-size:14.8px;color:#6b4a12;
+  }
+  .note strong{color:#4a3208;}
+
+  /* ---------- Footer ---------- */
+  footer.site{
+    background:var(--ink);color:#b9cfe2;padding:44px 0 30px;font-size:14.5px;
+  }
+  footer.site .fgrid{
+    display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:28px;
+  }
+  footer.site .fname{
+    display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:17px;margin-bottom:12px;
+  }
+  footer.site .fname svg{width:28px;height:28px;}
+  footer.site h4{color:#fff;font-size:14px;font-weight:800;margin-bottom:10px;letter-spacing:.5px;}
+  footer.site ul{list-style:none;}
+  footer.site li{margin-bottom:7px;}
+  footer.site a{color:#b9cfe2;}
+  footer.site a:hover{color:#8fd3f7;}
+  footer.site .copy{
+    margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);
+    font-size:13px;color:#8fadc7;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:900px){
+    .g3{grid-template-columns:repeat(2,minmax(0,1fr));}
+    footer.site .fgrid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:720px){
+    .nav-toggle{
+      display:inline-flex;align-items:center;justify-content:center;
+      width:40px;height:40px;border-radius:10px;border:1px solid var(--line);
+      background:#fff;cursor:pointer;
+    }
+    nav.main{
+      display:none;position:absolute;left:0;right:0;top:66px;
+      background:#fff;border-bottom:1px solid var(--line);
+      padding:10px 16px 16px;flex-direction:column;gap:2px;
+      box-shadow:0 12px 24px rgba(15,42,74,.10);
+    }
+    nav.main.open{display:flex;}
+    nav.main a{padding:10px 12px;border-radius:8px;}
+    .bar{position:relative;}
+    .hero .wrap{padding-top:40px;padding-bottom:40px;}
+    .hero-facts{grid-template-columns:1fr;gap:10px;}
+    section{padding:42px 0;}
+    .g3,.g2{grid-template-columns:1fr;}
+    .step{grid-template-columns:44px 1fr;gap:12px;}
+    footer.site .fgrid{grid-template-columns:1fr;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <div class="brand">
+      <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0f2a4a"/>
+        <path d="M18 22h28M18 32h20M18 42h28" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="48" cy="32" r="6" fill="#f9c74f"/>
+      </svg>
+      <span class="name">mw777.me</span>
+    </div>
+    <button class="nav-toggle" aria-label="展开导航" aria-expanded="false" onclick="var n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'));">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f2a4a" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
+    </button>
+    <nav class="main" id="nav" aria-label="主导航">
+      <a href="#position">站点定位</a>
+      <a href="#modules">栏目构成</a>
+      <a href="#access">访问方式</a>
+      <a href="#guide">使用指引</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="kicker">网址导航 · 资源聚合</span>
+    <h1>mw777.me</h1>
+    <p class="lead">mw777.me 是一个以网址导航与资源聚合为定位的入口平台。本页围绕 mw777.me 的站点定位、栏目构成、访问方式与使用注意事项展开说明，帮助首次到访的访问者先了解它是什么，再决定如何开始使用。</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#access">查看访问方式</a>
+      <a class="btn btn-ghost" href="#modules">了解栏目构成</a>
+    </div>
+    <div class="hero-facts">
+      <div class="fact"><b>网址导航</b><span>以入口整理为核心</span></div>
+      <div class="fact"><b>资源聚合</b><span>按栏目归类呈现</span></div>
+      <div class="fact"><b>使用说明</b><span>访问前先读指引</span></div>
+    </div>
+  </div>
+</div>
+
+<section id="position">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Position</span>
+      <h2>mw777.me 是什么：先把定位说清楚</h2>
+      <p>理解一个入口平台，先看它解决什么问题。mw777.me 的价值在于把分散的入口信息集中整理，让访问者少走弯路，而不是提供一个封闭的内容库。</p>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0b8fd0" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/>
+          </svg>
+        </div>
+        <h3>入口整理为主</h3>
+        <p>mw777.me 的核心工作是整理与归类各类入口地址，页面结构围绕“找得到、找得快”设计，适合需要一次性浏览多个入口的访问者。</p>
+      </article>
+      <article class="card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0b8fd0" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/>
+          </svg>
+        </div>
+        <h3>栏目化呈现</h3>
+        <p>入口按主题分区，访问者可以按栏目逐层浏览，也可以直接定位到需要的分类，减少在无关信息上的时间消耗。</p>
+      </article>
+      <article class="card">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0b8fd0" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M12 3l8 4v5c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3>理性使用为先</h3>
+        <p>入口平台只提供信息组织，不替代访问者自身的判断。建议在访问前确认地址来源，并遵循所在地的法律法规与平台规则。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="modules">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Structure</span>
+      <h2>栏目构成：mw777.me 的页面如何组织</h2>
+      <p>mw777.me 的页面信息按用途分层，从总览到细分入口逐级展开。以下四类栏目是访问中最常接触的部分，各自承担不同的检索任务。</p>
+    </div>
+    <div class="grid g2">
+      <article class="card">
+        <h3>导航总览区</h3>
+        <p>作为首页的第一层信息，总览区以分组形式列出主要入口方向，让访问者在几秒内判断是否有自己需要的内容，再决定是否深入。</p>
+      </article>
+      <article class="card">
+        <h3>分类入口区</h3>
+        <p>按主题划分的细分入口集中在这里，适合目标较明确的访问者。分类命名以用途为导向，避免抽象词汇，降低理解成本。</p>
+      </article>
+      <article class="card">
+        <h3>说明与提示区</h3>
+        <p>用于放置访问须知、使用建议与更新说明。mw777.me 将提示信息单独成区，是为了让访问者在点击入口前先了解基本规则。</p>
+      </article>
+      <article class="card">
+        <h3>页面文字辅助区</h3>
+        <p>包括栏目小标题、条目简介与页尾信息。这类文字不承担跳转功能，但对理解整体结构、判断入口用途有直接帮助。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Access</span>
+      <h2>访问方式：从哪里进入 mw777.me</h2>
+      <p>访问入口平台时，最需要确认的是地址本身。mw777.me 的访问应以完整域名为准，建议通过地址栏直接输入，而不是依赖来源不明的跳转链接。</p>
+    </div>
+    <div class="grid g3">
+      <article class="card">
+        <h3>直接输入域名</h3>
+        <p>在浏览器地址栏完整输入 mw777.me 并回车，是最直接的方式。输入时可留意拼写是否完整，避免因缺字误入其他站点。</p>
+      </article>
+      <article class="card">
+        <h3>保存为书签</h3>
+        <p>确认访问正常后，可将 mw777.me 加入浏览器书签或收藏夹，下次从书签进入，减少每次手动输入带来的差错。</p>
+      </article>
+      <article class="card">
+        <h3>移动端浏览</h3>
+        <p>手机访问时建议使用系统自带或主流浏览器，保持页面缩放为默认比例，分类入口区域在窄屏下会转为纵向排列。</p>
+      </article>
+    </div>
+    <div style="margin-top:22px;">
+      <div class="note">
+        <strong>访问提示：</strong>mw777.me 仅作为入口信息的整理页面，不存储、不代理任何第三方内容。访问第三方页面时，请以该页面自身的规则与所在地法律法规为准。
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">Guide</span>
+      <h2>使用指引：四步完成一次有效访问</h2>
+      <p>把访问流程拆成可执行的步骤，比笼统地“打开看看”更容易形成稳定习惯。以下四步适用于大多数第一次使用 mw777.me 的访问者。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">01</div>
+        <div>
+          <h3>先读总览，再决定方向</h3>
+          <p>进入页面后不要急着点击，先浏览导航总览区的分组标题，判断自己需要的是哪一类入口。这一步通常只需十几秒，却能明显减少来回翻找。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">02</div>
+        <div>
+          <h3>按用途而不是按名称筛选</h3>
+          <p>分类入口区的名称以用途描述为主。选择时关注“我要做什么”，而不是“名字听起来像什么”，这样更容易命中真正需要的内容。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">03</div>
+        <div>
+          <h3>确认入口信息再跳转</h3>
+          <p>点击前快速核对条目简介，确认入口与需求一致。若简介信息不足，可返回总览区换一个分类，不要在不确定的页面上继续深入。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">04</div>
+        <div>
+          <h3>把常用入口固定下来</h3>
+          <p>确认某个入口长期有用后，将其单独加入书签。mw777.me 适合做入口的起点，长期高频使用的地址则适合单独保存，减少重复检索。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-tag">FAQ</span>
+      <h2>常见问题：关于 mw777.me 的几点补充</h2>
+      <p>以下问题来自访问入口平台时较常见的疑问，回答仅针对 mw777.me 的页面定位与使用方式，不涉及第三方站点的具体内容。</p>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>mw777.me 是否提供内容本身？</summary>
+        <p>不提供。mw777.me 的定位是网址导航与资源聚合，页面承担的是入口整理与分类说明的职责，具体内容由被访问的第三方页面负责。</p>
+      </details>
+      <details>
+        <summary>页面上的分类为什么以用途命名？</summary>
+        <p>因为访问入口平台的人通常带着明确目的。用用途命名的分类可以直接对应用户的动作意图，比抽象名称更容易判断，也便于后续调整栏目结构。</p>
+      </details>
+      <details>
+        <summary>可以在手机上使用 mw777.me 吗？</summary>
+        <p>可以。页面采用响应式布局，窄屏下导航会折叠为菜单按钮，卡片与步骤区转为单列排列，正文行长与字号适合手机阅读。</p>
+      </details>
+      <details>
+        <summary>入口地址发生变动怎么办？</summary>
+        <p>以 mw777.me 页面上的最新说明为准。若某个入口无法访问，可先返回总览区查看是否有同类替代分类，再决定是否继续。</p>
+      </details>
+      <details>
+        <summary>访问时需要额外安装软件吗？</summary>
+        <p>不需要。mw777.me 是普通网页，使用浏览器即可打开。访问过程中不建议安装来源不明的插件或程序，以免影响设备安全。</p>
+      </details>
+    </div>
+    <div style="margin-top:26px;">
+      <div class="note">
+        <strong>使用建议：</strong>把 mw777.me 当作入口的起点而非终点，遇到不确定的地址先停下来核对，是使用这类导航页面最稳妥的习惯。
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <div class="fname">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#123a63"/>
+            <path d="M18 22h28M18 32h20M18 42h28" stroke="#38bdf8" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="48" cy="32" r="6" fill="#f9c74f"/>
+          </svg>
+          mw777.me
+        </div>
+        <p>mw777.me 是一个以网址导航与资源聚合为定位的入口平台。本页整理其站点定位、栏目构成、访问方式与使用指引，方便访问者快速了解并开始使用。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#position">站点定位</a></li>
+          <li><a href="#modules">栏目构成</a></li>
+          <li><a href="#access">访问方式</a></li>
+          <li><a href="#guide">使用指引</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li>以完整域名 mw777.me 访问</li>
+          <li>先读提示再点击入口</li>
+          <li>常用地址单独加书签</li>
+          <li>遵守所在地法律法规</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2024 mw777.me · 网址导航与资源聚合入口说明页</span>
+      <span>本页内容仅用于介绍 mw777.me 的页面定位与使用方式</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
