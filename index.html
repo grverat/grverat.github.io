@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>51黑料独家-黑料独家爆料_51黑料独家最新动态与热门合集</title>
+<meta name="description" content="51黑料独家主题首页，汇集黑料独家爆料、热门合集与最新动态，提供栏目导航、内容速览与清晰的信息入口，帮助访问者快速了解平台内容结构。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151a24'/%3E%3Cpath d='M18 20h28v6H18zM18 31h20v6H18zM18 42h28v6H18z' fill='%23f0523c'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0f1218;
+  --bg-soft:#161b25;
+  --card:#1c222e;
+  --line:#2a3242;
+  --text:#e8ecf3;
+  --muted:#9aa5b8;
+  --accent:#f0523c;
+  --accent-soft:rgba(240,82,60,.14);
+  --gold:#e7b64b;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* header */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(15,18,24,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-inner{display:flex;align-items:center;gap:24px;padding:14px 0}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{width:38px;height:38px;border-radius:10px;background:var(--accent-soft);display:grid;place-items:center;border:1px solid rgba(240,82,60,.35)}
+.logo-text{font-size:19px;font-weight:800;letter-spacing:.5px;white-space:nowrap}
+.logo-text em{font-style:normal;color:var(--accent)}
+nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav a{
+  font-size:14px;color:var(--muted);padding:7px 12px;border-radius:8px;
+  transition:.2s;white-space:nowrap;
+}
+nav a:hover{color:var(--text);background:var(--bg-soft)}
+.nav-cta{
+  font-size:14px;background:var(--accent);color:#fff;padding:8px 16px;border-radius:9px;
+  font-weight:600;white-space:nowrap;
+}
+.nav-cta:hover{background:#d8412c;color:#fff}
+
+/* hero */
+.hero{padding:56px 0 40px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;right:-140px;top:-120px;width:440px;height:440px;
+  background:radial-gradient(circle,rgba(240,82,60,.18),transparent 68%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:44px;align-items:center;position:relative}
+.tagline{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:1px;
+  color:var(--accent);background:var(--accent-soft);border:1px solid rgba(240,82,60,.3);
+  padding:5px 13px;border-radius:99px;margin-bottom:18px;
+}
+h1{font-size:clamp(30px,4.4vw,50px);line-height:1.18;font-weight:800;letter-spacing:-.5px}
+h1 span{color:var(--accent)}
+.hero-lead{margin-top:18px;color:var(--muted);font-size:16.5px;max-width:36em}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:11px;
+  font-weight:600;font-size:15px;transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:#d8412c;transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:var(--bg-soft)}
+.btn-ghost:hover{border-color:var(--muted)}
+.btn[aria-disabled="true"]{opacity:.72;cursor:not-allowed;pointer-events:none}
+.hero-stats{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap}
+.stat b{display:block;font-size:23px;color:var(--gold);font-weight:800}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* hero panel */
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;
+  box-shadow:0 18px 50px rgba(0,0,0,.35);
+}
+.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.panel-head h2{font-size:15px;font-weight:700;letter-spacing:.4px}
+.live{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--accent)}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.ticker{list-style:none;display:flex;flex-direction:column;gap:2px}
+.ticker li{
+  display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px dashed var(--line);
+  font-size:14px;color:#cbd3e0;
+}
+.ticker li:last-child{border-bottom:0}
+.ticker .idx{font-family:ui-monospace,monospace;color:var(--accent);font-size:12px;padding-top:3px}
+.panel-note{margin-top:14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+
+/* sections */
+section{padding:52px 0}
+.sec-head{margin-bottom:30px;max-width:44em}
+.sec-kicker{font-size:12.5px;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:8px}
+.sec-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.3px}
+.sec-head p{margin-top:10px;color:var(--muted);font-size:15px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;transition:.22s;display:flex;flex-direction:column;
+}
+.card:hover{border-color:rgba(240,82,60,.45);transform:translateY(-3px)}
+.card-icon{
+  width:42px;height:42px;border-radius:11px;background:var(--accent-soft);
+  display:grid;place-items:center;margin-bottom:16px;
+}
+.card h3{font-size:16.5px;font-weight:700;margin-bottom:9px}
+.card p{font-size:14px;color:var(--muted);flex:1}
+.card .meta{margin-top:16px;font-size:12.5px;color:#7d8899;display:flex;gap:12px;flex-wrap:wrap}
+.card .meta b{color:var(--gold);font-weight:600}
+
+/* list section */
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:34px;align-items:start}
+.article-list{display:flex;flex-direction:column;gap:0}
+.art{
+  display:flex;gap:18px;padding:20px 0;border-bottom:1px solid var(--line);
+}
+.art:first-child{padding-top:0}
+.art-no{
+  font-family:ui-monospace,monospace;font-size:13px;color:var(--muted);
+  border:1px solid var(--line);border-radius:8px;width:34px;height:34px;
+  display:grid;place-items:center;flex-shrink:0;
+}
+.art h3{font-size:16px;font-weight:700;margin-bottom:6px;line-height:1.5}
+.art p{font-size:14px;color:var(--muted)}
+.art .tag{
+  display:inline-block;font-size:12px;color:var(--accent);margin-top:9px;
+  border:1px solid rgba(240,82,60,.3);padding:2px 9px;border-radius:6px;
+}
+.aside-box{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:22px;
+}
+.aside-box h3{font-size:15px;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.kw-list{list-style:none;display:flex;flex-wrap:wrap;gap:9px}
+.kw-list li{font-size:13px;color:#c3ccda;background:var(--card);border:1px solid var(--line);padding:5px 11px;border-radius:7px}
+.aside-note{font-size:13.5px;color:var(--muted);margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+
+/* cta band */
+.band{
+  background:linear-gradient(120deg,#1d2430,#171c26);
+  border:1px solid var(--line);border-radius:20px;padding:40px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.band::after{
+  content:"";position:absolute;left:50%;bottom:-160px;transform:translateX(-50%);
+  width:520px;height:280px;background:radial-gradient(ellipse,rgba(240,82,60,.2),transparent 70%);
+}
+.band h2{font-size:clamp(21px,2.6vw,28px);font-weight:800;position:relative}
+.band p{color:var(--muted);margin:12px auto 26px;max-width:34em;font-size:15px;position:relative}
+.band .buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* footer */
+footer{border-top:1px solid var(--line);margin-top:30px;padding:40px 0 32px;background:#0c0f14}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:34px}
+.foot-brand p{font-size:13.5px;color:var(--muted);margin-top:12px;max-width:30em}
+.foot-col h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;letter-spacing:.5px}
+.foot-col a{display:block;font-size:13.5px;color:var(--muted);padding:4px 0}
+.foot-col a:hover{color:var(--accent)}
+.foot-bottom{
+  margin-top:30px;padding-top:20px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.5px;color:#6f7a8c;
+}
+
+/* responsive */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:34px}
+  .grid{grid-template-columns:1fr 1fr}
+  .split{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .head-inner{flex-wrap:wrap;gap:12px}
+  nav{margin-left:0;order:3;width:100%;overflow-x:auto;padding-bottom:2px}
+  nav a{padding:6px 10px;font-size:13px}
+  .nav-cta{order:2;margin-left:auto}
+  .hero{padding:36px 0 28px}
+  h1{font-size:29px}
+  .hero-stats{gap:20px}
+  .grid{grid-template-columns:1fr}
+  section{padding:38px 0}
+  .band{padding:28px 20px}
+  .foot-grid{grid-template-columns:1fr}
+  .btn{width:100%;justify-content:center}
+  .hero-actions .btn{width:100%}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap head-inner">
+    <a class="logo" href="#top" aria-label="51黑料独家 首页">
+      <span class="logo-mark">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M4 5h16v3H4zM4 10.5h11v3H4zM4 16h16v3H4z" fill="#f0523c"/>
+        </svg>
+      </span>
+      <span class="logo-text">51黑料<em>独家</em></span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#topics">独家栏目</a>
+      <a href="#latest">最新动态</a>
+      <a href="#howto">浏览指南</a>
+      <a href="#faq">常见问题</a>
+      <a href="#about">关于本站</a>
+    </nav>
+    <a class="nav-cta" href="#latest">查看最新</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline">独家爆料 · 内容速览</span>
+        <h1>51黑料独家</h1>
+        <p class="hero-lead">这里是 51黑料独家 的主题首页。我们把独家爆料按栏目归档，把最新动态按时间排列，让你不必在杂乱的转发里反复翻找，就能先看清一条黑料属于哪类话题、更新到哪一步、还有哪些相关内容可以继续读。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#latest">
+            浏览最新动态
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#topics">了解独家栏目</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>6</b><span>独家内容栏目</span></div>
+          <div class="stat"><b>每日</b><span>动态归档更新</span></div>
+          <div class="stat"><b>1</b><span>统一内容入口</span></div>
+        </div>
+      </div>
+
+      <aside class="panel" aria-label="今日速览">
+        <div class="panel-head">
+          <h2>今日速览</h2>
+          <span class="live"><i></i>栏目更新</span>
+        </div>
+        <ul class="ticker">
+          <li><span class="idx">01</span><span>热点线索进入复核流程，编辑标注来源与时间</span></li>
+          <li><span class="idx">02</span><span>独家合集按话题重新排序，旧条目补注进度</span></li>
+          <li><span class="idx">03</span><span>争议内容单独标注，注明尚待确认的部分</span></li>
+          <li><span class="idx">04</span><span>移动端阅读版式优化，长文支持分段浏览</span></li>
+        </ul>
+        <div class="panel-note">速览只反映栏目内容结构变化，不代表对任何具体事件的事实认定。</div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- TOPICS -->
+  <section id="topics">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">内容分区</div>
+        <h2>51黑料独家 的六个栏目</h2>
+        <p>黑料内容的价值不在数量堆叠，而在能否被归类、被核对、被回溯。以下栏目按信息类型划分，每条内容归入其一，避免同一话题散落在不同位置。</p>
+      </div>
+      <div class="grid">
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l2.5 5.6 6.1.7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.4 9.3l6.1-.7z" stroke="#f0523c" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>独家首曝</h3>
+          <p>站内优先发布的一手条目。每条注明线索来源类型、采集时间与目前掌握的程度，未证实的部分用明确措辞标出，方便读者自行判断可信度。</p>
+          <div class="meta"><span>更新：<b>按日</b></span><span>形态：图文条目</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="#f0523c" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>话题合集</h3>
+          <p>把同一事件的零散信息合并成时间线，包含早期传闻、后续回应与当前状态。合集页重点是理顺顺序，而不是追加猜测，读者可从头读到尾。</p>
+          <div class="meta"><span>更新：<b>事件驱动</b></span><span>形态：时间线</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="#f0523c" stroke-width="1.6"/><path d="M16 16l4 4" stroke="#f0523c" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>线索核对</h3>
+          <p>对流传较广的说法逐条比对公开信息，列出支持点与矛盾点。核对结果分为“可确认”“存疑”“无法核实”三档，不做超出资料范围的结论。</p>
+          <div class="meta"><span>更新：<b>按需</b></span><span>形态：对照表</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v16M4 12h16" stroke="#f0523c" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </div>
+          <h3>热门排行</h3>
+          <p>按站内阅读与检索行为排序，展示近日关注度较高的条目。榜单只说明“被看得多”，不说明“更真实”，排行旁附有这一提示。</p>
+          <div class="meta"><span>更新：<b>每日</b></span><span>形态：列表</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h10l4 4v12H5z" stroke="#f0523c" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12h6M9 16h4" stroke="#f0523c" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>编辑手记</h3>
+          <p>记录某条内容为何被收录、为何被降权或撤下，也说明取材边界。这部分不提供新爆料，但能让读者看到 51黑料独家 的取舍标准。</p>
+          <div class="meta"><span>更新：<b>不定期</b></span><span>形态：短文</span></div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2" stroke="#f0523c" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>数据观察</h3>
+          <p>汇总栏目层面的统计，例如条目数量、更新频率与话题分布。所有数字来自站内记录，仅用于说明内容结构，不涉及对事件本身的评价。</p>
+          <div class="meta"><span>更新：<b>按周</b></span><span>形态：图表</span></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LATEST -->
+  <section id="latest">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">最新动态</div>
+        <h2>近期值得先读的几条</h2>
+        <p>以下条目按发布时间排列，每条只给一段摘要与当前状态。完整内容在对应栏目页展开，摘要中不出现未经核实的结论性表述。</p>
+      </div>
+
+      <div class="split">
+        <div class="article-list">
+
+          <article class="art">
+            <span class="art-no">01</span>
+            <div>
+              <h3>一条传闻如何被拆成三个待核问题</h3>
+              <p>编辑把原始说法拆分为时间、主体、证据三项，分别标注已确认与待补充的部分。这类拆分是 51黑料独家 处理线索的常规做法，避免把整段传闻当作结论转发。</p>
+              <span class="tag">线索核对</span>
+            </div>
+          </article>
+
+          <article class="art">
+            <span class="art-no">02</span>
+            <div>
+              <h3>话题合集补全时间线：从早期讨论到公开回应</h3>
+              <p>该合集将此前分散的讨论按日期重排，并补入当事方的公开回应。合集页顶部新增状态栏，显示事件目前处于“进行中”，后续会继续更新。</p>
+              <span class="tag">话题合集</span>
+            </div>
+          </article>
+
+          <article class="art">
+            <span class="art-no">03</span>
+            <div>
+              <h3>热门排行说明：阅读量不等于可信度</h3>
+              <p>排行依据站内阅读与检索记录生成。我们在榜单旁固定放置提示语，说明热度只反映关注程度。把这一点讲清楚，是 51黑料独家 维持内容秩序的一部分。</p>
+              <span class="tag">热门排行</span>
+            </div>
+          </article>
+
+          <article class="art">
+            <span class="art-no">04</span>
+            <div>
+              <h3>编辑手记：为什么撤下了一条早期条目</h3>
+              <p>该条目因关键信息无法核实而被撤下，手记记录了撤下原因与复核过程。我们保留说明而不是静默删除，便于读者理解内容标准的变化。</p>
+              <span class="tag">编辑手记</span>
+            </div>
+          </article>
+
+        </div>
+
+        <aside>
+          <div class="aside-box">
+            <h3>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M3 12h18" stroke="#f0523c" stroke-width="1.8" stroke-linecap="round"/></svg>
+              常用检索词
+            </h3>
+            <ul class="kw-list">
+              <li>51黑料独家</li>
+              <li>独家爆料</li>
+              <li>黑料合集</li>
+              <li>线索核对</li>
+              <li>热门排行</li>
+              <li>最新动态</li>
+              <li>话题时间线</li>
+              <li>内容归档</li>
+            </ul>
+            <p class="aside-note">检索词用于站内栏目跳转，点击后回到本页对应分区。站内不提供站外跳转式爆料，所有内容均以静态文本呈现。</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOWTO -->
+  <section id="howto">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">浏览指南</div>
+        <h2>怎样高效使用 51黑料独家</h2>
+        <p>面对大量零散信息，先建立顺序比先看数量更重要。下面三步是站内推荐的阅读路径，适用于大多数访问场景。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="#f0523c" stroke-width="1.6"/><path d="M12 8v4l3 2" stroke="#f0523c" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>第一步：先看状态</h3>
+          <p>每条内容都标有“进行中”“已核实”“待补充”等状态。先读状态再读正文，可以避免把旧信息当成最新进展，也能减少误读。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h16" stroke="#f0523c" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>第二步：进入合集</h3>
+          <p>单条内容只讲一个切面，合集才给出前后顺序。若某条值得关注，建议转到对应合集从头读，理解它为什么在这一时间点出现。</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12l4.5 4.5L19 7" stroke="#f0523c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>第三步：核对来源</h3>
+          <p>核对栏目列出支持点与矛盾点。如果一条说法无法在核对页找到对应记录，可将其视为尚未确认，暂不采信。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">常见问题</div>
+        <h2>访问者常问的几件事</h2>
+      </div>
+      <div class="article-list">
+        <article class="art">
+          <span class="art-no">Q</span>
+          <div>
+            <h3>51黑料独家 的内容都来自哪里？</h3>
+            <p>内容由站内编辑根据公开讨论整理并标注采集时间，不展示无法说明来源的条目。对于来源单一的说法，会在正文中直接写明“单一来源”。</p>
+          </div>
+        </article>
+        <article class="art">
+          <span class="art-no">Q</span>
+          <div>
+            <h3>为什么有些条目只有摘要？</h3>
+            <p>摘要用于快速判断是否值得深入。当关键信息尚在核对，正文暂不展开，只保留摘要与状态，待核对完成后再补全内容。</p>
+          </div>
+        </article>
+        <article class="art">
+          <span class="art-no">Q</span>
+          <div>
+            <h3>站内的排行是否代表真实性？</h3>
+            <p>不代表。排行只反映站内阅读与检索热度，与内容真实程度无关。我们把这句提示固定放在榜单旁，避免读者产生误解。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="about">
+    <div class="wrap">
+      <div class="band">
+        <h2>从最新动态开始，按顺序读 51黑料独家</h2>
+        <p>栏目、合集与核对记录构成一条完整的阅读路径。你可以从任一入口进入，但建议先看状态，再读合集，最后核对来源。</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#latest">查看最新动态</a>
+          <a class="btn btn-ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+            下载栏目说明
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11M7 11l5 5 5-5M5 20h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="logo-mark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 5h16v3H4zM4 10.5h11v3H4zM4 16h16v3H4z" fill="#f0523c"/>
+            </svg>
+          </span>
+          <span class="logo-text">51黑料<em>独家</em></span>
+        </a>
+        <p>51黑料独家 是一个以栏目归档为核心的内容首页，强调状态标注、来源说明与时间线整理。页面内容为站内栏目结构介绍，不构成对任何具体事件的事实认定。</p>
+      </div>
+      <div class="foot-col">
+        <h4>内容栏目</h4>
+        <a href="#topics">独家首曝</a>
+        <a href="#topics">话题合集</a>
+        <a href="#topics">线索核对</a>
+        <a href="#topics">热门排行</a>
+      </div>
+      <div class="foot-col">
+        <h4>使用帮助</h4>
+        <a href="#howto">浏览指南</a>
+        <a href="#faq">常见问题</a>
+        <a href="#latest">最新动态</a>
+        <a href="#about">关于本站</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 51黑料独家 · 内容归档与栏目说明</span>
+      <span>本站内容以整理与标注为主，请理性阅读、自行核对。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
